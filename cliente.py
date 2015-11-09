@@ -2,8 +2,7 @@
 # -*- coding: utf-8 -*-
  
 # Programa Cliente
-# www.pythondiario.com
- 
+
 import socket
 import sys
  
