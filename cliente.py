@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
  
 # Programa Cliente
-
+ 
 import socket
 import sys
  
@@ -16,18 +16,18 @@ sock.connect(server_address)
 try:
      
     # Enviando datos
-    message = 'Este es el mensaje.  Se repitio.'
-    print >>sys.stderr, 'enviando "%s"' % message
+    message = 'Hola Lander'
+    #print >>sys.stderr, 'enviando "%s"' % message
     sock.sendall(message)
  
     # Buscando respuesta
-    amount_received = 0
-    amount_expected = len(message)
+   # amount_received = 0
+   # amount_expected = len(message)
      
-    while amount_received < amount_expected:
-        data = sock.recv(19)
-        amount_received += len(data)
-        print >>sys.stderr, 'recibiendo "%s"' % data
+   # while amount_received < amount_expected:
+    #    data = sock.recv(19)
+     #   amount_received += len(data)
+      #  print >>sys.stderr, 'recibiendo "%s"' % data
  
 finally:
     print >>sys.stderr, 'cerrando socket'
