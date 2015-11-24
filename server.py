@@ -22,7 +22,7 @@ s.bind(server_address)
 
 #Nos ponemos a escuchar el número de conexiones simultaneas, que especifiquemos.
 
-s.listen(5)
+s.listen(50)
 
 #Empezamos a esperar las conexiones
 
@@ -34,16 +34,17 @@ while True:
 
 	try:
 
-		#print >> 'Conexión desde: ', client_address
+		print >> sys.stderr,'Conexión desde: ', client_address
 		#Recibimos los datos
 		while True:
 			data = connection.recv(1024)
-			print >>sys.stderr, 'recibido "%s"' % data
+			
 			#Mientras haya datos
 
 			if data:
 				#print >> sys.stedrr, 'enviando mensaje de vuelta al cliente'
 				connection.sendall(data)
+				print >> sys.stderr, 'recibido "%s"' % data
 			else:
 				#No hay más datos, cortamos.
 				#print >> sys.stedrr, 'No hay datos cerramos'
