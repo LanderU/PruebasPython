@@ -3,9 +3,9 @@
 
 import sys
 import socket
-
+import os
 #Creamos el socket.
-
+#os.system('echo "hola" > salida' )
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 #Dirección del servidor
@@ -37,18 +37,14 @@ while True:
 		print >> sys.stderr,'Conexión desde: ', client_address
 		#Recibimos los datos
 		while True:
-			data = connection.recv(1024)
 			
-			#Mientras haya datos
+			data = connection.recv(1024)
 
-			if data:
-				#print >> sys.stedrr, 'enviando mensaje de vuelta al cliente'
-				connection.sendall(data)
-				print >> sys.stderr, 'recibido "%s"' % data
-			else:
-				#No hay más datos, cortamos.
-				#print >> sys.stedrr, 'No hay datos cerramos'
-				break
+			
+			writeFile = open ('serverescritura', 'a')
+			writeFile.write(data)
+			writeFile.close()
+
 			
 
 	finally:
