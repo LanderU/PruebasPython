@@ -4,6 +4,8 @@
 import sys
 import socket
 import os
+import csv, operator
+import time
 #Creamos el socket.
 #os.system('echo "hola" > salida' )
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -26,6 +28,7 @@ s.listen(50)
 
 #Empezamos a esperar las conexiones
 
+
 while True:
 
 	#Esperamos la conexión
@@ -35,7 +38,11 @@ while True:
 	try:
 
 		print >> sys.stderr,'Conexión desde: ', client_address
+		# Hora del sistema
+		
 		#Recibimos los datos
+		dateTime = time.strftime("%H:%M:%S - %d/%m/%y")
+		print >> sys.stderr, "Hora y fecha", dateTime
 		while True:
 			
 			data = connection.recv(1024)

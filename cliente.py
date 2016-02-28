@@ -5,7 +5,7 @@
  
 import socket
 import sys
-import os 
+import os
 # Creando un socket TCP/IP
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
  
