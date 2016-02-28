@@ -8,8 +8,8 @@ def calculos ():
 
 	while x > y:
 		print 'El segundo valor tiene que ser mayor que el primero...'
-		x = raw_input ('Introduzca el primer valor: ')
-		y = raw_input ('Introduzca el segundo valor: ')
+		x = int(raw_input ('Introduzca el primer valor: '))
+		y = int(raw_input ('Introduzca el segundo valor: '))
 
 	while x <= y:
 		print '-----------------'
