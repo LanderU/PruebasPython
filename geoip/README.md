@@ -8,7 +8,7 @@
 
 `wget --verbose http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz`
 
-**Lo descomprimimos`
+**Lo descomprimimos**
 
 `tar -xvzf GeoLiteCity.dat.gz`
  
