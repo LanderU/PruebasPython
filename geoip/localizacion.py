@@ -5,21 +5,27 @@
 import pygeoip
  
 def main():
-    #geoip_country() 
+
     geoip_city()
-    #print 'done'
- 
+
 def geoip_city():
+
+    ip = []
+    fichero = open('analytics.csv')
+    for linea in fichero:
+        dato = linea.split(',')
+        esta = dato[2] in ip
+        if not esta:
+            ip.append(dato[2])
+    fichero.close()
+
     path = 'GeoLiteCity.dat'
     gic = pygeoip.GeoIP(path)
-    print gic.record_by_addr('79.152.252.109')
-    #print gic.region_by_addr('79.152.252.109')
- 
-#def geoip_country(): 
-    #path = 'GeoLiteCity.dat'
-    #gi = pygeoip.GeoIP(path)
-    #print gi.country_code_by_addr('79.152.252.109')
-    #print gi.country_name_by_addr('79.152.252.109')
+    i = 0
+    while i < len(ip):
+        print gic.record_by_addr(ip[i])['latitude']
+        print gic.record_by_addr(ip[i])['longitude']
+        i += 1
  
 if __name__ == '__main__':
     main()
