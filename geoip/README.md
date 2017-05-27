@@ -6,9 +6,9 @@
 
 ## Es necesario tener la db, para ello 
 
-`wget --verbose http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz`
+`wget http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz`
 
 **Lo descomprimimos**
 
-`tar -xvzf GeoLiteCity.dat.gz`
+`gunzip GeoLiteCity.dat.gz`
  
