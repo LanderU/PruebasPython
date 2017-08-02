@@ -13,7 +13,4 @@ except NameError:
     print("No has introducido un numero")
     sys.exit(1)
 
-per = 2*base + 2*altura
-area = base * altura
-
-print("Los resulatdos son Perimetro= %.2f Altura= %.2f" % (per,area))
+print("Los resulatdos son Perimetro= %.2f Altura= %.2f" % ((2*base + 2*altura),(base * altura)))
