@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python
 
 import sys
 
@@ -18,7 +18,15 @@ except NameError:
     print("No valido...")
     sys.exit(1)
 
-if pos > len(lista) - 1:
+if pos > len(lista) - 1 or pos < 0:
     print("Los numeros de la lista van del 0 al %d" % (len(lista) -1))
 else:
+    print("La lista antes tenía esta pinta: ")
+    for i in lista:
+        print(i, end=" ")
+    print()
     lista[pos] = cadena
+    print("Ahora tiene esta otra: ")
+    for i in lista:
+        print(i, end= " ")
+    print()
